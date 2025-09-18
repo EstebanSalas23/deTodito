@@ -20,17 +20,14 @@ public class ConsolaController {
         if (nombre == null || nombre.trim().isEmpty()){
             return false;
         }
-
         if (precio <= 0){
             return false;
         }
         
-        Consola consolaNuevo = new Consola();
-
+        Consola consolaNuevo = new Consola(nombre, marca, precio, serial, cablePoder, cableAux);
         Boolean agregado = consolas.add(consolaNuevo);
         
         if (agregado) serial++;
-
         return agregado;
     }
 }
